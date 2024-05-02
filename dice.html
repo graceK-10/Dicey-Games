@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-dice.css">
+    <title>Dice Game</title>
+  </head>
+
+  <body>  <header>
+    <h1>WELCOME TO</h1>
+    <h2>DICE DYNASTY BY T & G</h2>
+        <!-- Bird Background -->
+        <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird" class="bird-1" alt="Flying Bird Animation">
+        <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird2" class="bird-2" alt="Flying Bird Animation">
+</header>
+    <div>
+      <p id="result"></p>
+    </div>
+    <div><p id="countdown"></p></div>
+    <main>
+      <div class="players">
+        <div class="player" id="player1">
+          <p>Player 1 Score: <span id="score1">0</span></p>
+          <p>Name: <span id="name1"></span></p>
+        </div>
+        <div class="player" id="player2">
+          <p>Player 2 Score: <span id="score2">0</span></p>
+          <p>Name: <span id="name2"></span></p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="dice" id="dice1">
+          <div class="dot one hidden"></div>
+          <div class="two hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="three hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="four hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="five hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot center"></div>
+          </div>
+          <div class="six">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+        <div class="dice" id="dice2">
+          <div class="dot one hidden"></div>
+          <div class="two hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="three hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="four hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="five hidden">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot center"></div>
+          </div>
+          <div class="six">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+          </div>
+        </div>
+      </div>
+      <div class="button-container">
+        <button id="roll">Roll Dice</button>
+        <button id="back" onclick="goBack()">Back</button>
+        <button id="quit" onclick="quitPage()">Quit</button>
+      </div>
+      <script src="script-dice.js"></script>
+    </main>
+  </body>
+</html>

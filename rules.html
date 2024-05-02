@@ -1,0 +1,49 @@
+DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-rules.css">
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <header>
+        <h1>WELCOME TO</h1>
+        <h2>DICE DYNASTY BY T & G</h2>
+            <!-- Bird Background -->
+            <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird" class="bird-1" alt="Flying Bird Animation">
+            <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird2" class="bird-2" alt="Flying Bird Animation">
+    </header>
+    <main>
+      <!-- Rules container -->
+      <div class="rules-container">
+        <h2>How to play?</h2>
+        <p>
+          ☞ The objective of the game is to roll the highest number on the dice.
+          <!-- We can still edit the rules depending on how we plan our dice game -->
+        </p>
+        <ul id="rules">
+          <li>This game consists of 3 rounds.</li>
+          <li>The game is played between two players.</li>
+          <li>Players are to take turns rolling the dice.</li>
+          <li>
+            On a player's turn, they roll the dice, and the number rolled
+            becomes their score for that round.
+          </li>
+          <li>
+            The player with the highest total score at the end of the game wins.
+          </li>
+          <li>If the player's score is the same, then it is a tie.</li>
+        </ul>
+      </div>
+      <!-- The start button should take the players to the main game page. End-game button should clear/refresh the game? -->
+      <div class="button-container">
+        <button id="begin" onclick="startgame()">Start</button>
+        <button id="back" onclick="goback()">Back</button>
+        <button id="quit" onclick="endpage()">End</button>
+      </div>
+    </main>
+      <Footer>"Dare to Roll, Dare to Win - The Dice Await Yours DESTINY! By Grace and Thato"</Footer>
+    <script src="script-rules.js"></script>
+  </body>
+</html>
