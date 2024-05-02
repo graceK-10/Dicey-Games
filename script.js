@@ -43,3 +43,35 @@ function submitPlayer(playerNumber) {
     localStorage.removeItem("player1Name");
     localStorage.removeItem("player2Name");
   });
+
+
+  function quitPage() {
+    window.location.href = "https://youtu.be/dXEVs32KHuo?si=7ygkSLpMHe3CbF3j";
+    // window.close();
+  }
+  
+  function goBack() {
+    // window.location.href = "https://youtu.be/QtXby3twMmI?si=a7y9XcFHzHfwpcqA";
+    window.location.href = "player.html";
+  }
+  
+  function beginGame() {
+    window.location.href = "game.html";
+  }
+
+
+ // Author: thato and grace
+
+// Patched logic for a dice game. Do not change the name of the script.
+// This JavaScript file is linked to the dice.html file.
+
+// Selecting dice elements from the HTML document
+const dice1 = document.querySelector("#dice1");
+const dice2 = document.querySelector("#dice2");
+
+// Initializing player objects with default values and retrieving from local storage
+const player1 = {
+  name: localStorage.getItem("player1Name") || "Player One",
+  score: 0,
+  number: 1,
+}; 
