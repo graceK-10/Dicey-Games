@@ -82,11 +82,11 @@ animation: fly 5s infinite;
 
 .players-container {
   background-color: rgb(247, 231, 247);
-  height: 180px;
+  height: 195px;
   width: 250px;
   position: absolute;
   padding: 30px 10px;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border: 2px solid rgb(245, 174, 245);
@@ -105,13 +105,13 @@ input::placeholder{
 
 .btn1{
   padding: 0.5em 1.3em;
-  margin-top: 12px;
+  margin-top: 20px;
   border: 2px solid rgb(138, 43, 226);
   border-radius: 1em;
   background: rgb(245, 174, 245);
   transform-style: preserve-3d;
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .btn1::before {
