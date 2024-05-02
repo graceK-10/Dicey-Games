@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Dice Game</title>
+    <title>DICE GAME</title>
 </head>
 <body>
-    <div class="container">...</div>
+    <header id="title">
+        <h1>DICE GAME by TG</h1>
+    </header>
+    <div class="container">
+        <div id="players">
+            <label for="player1">Player 1:</label>
+            <input type="text" id="player1" placeholder="Enter Player" required="">
+            <br>
+            <button class="btn1" onclick="submitPlayer(1)">Enter</button>
+            <br>
+            <label for="player2">Player 2:</label>
+            <input type="text" id="player2" placeholder="Enter Player " required="">
+            <br>
+            <button onclick="submitPlayer(2)">Enter</button>
+        </div>
+    </div>
     <Footer>"Dare to roll, dare to win - the dice await your destiny By Grace and Thato"</Footer>
     <script src="script.js"></script>
 </body>
