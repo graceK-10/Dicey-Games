@@ -108,7 +108,7 @@ input::placeholder{
 
 #players label[for="player1"], label[for="player2"],
 #player1, #player2 {
-    color: rgb(255, 255, 255); 
+    color: rgb(95, 90, 90); 
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
 
@@ -271,7 +271,7 @@ h3 {
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  width: 330px;
+  width: 360px;
   height: 350px;
   position: absolute;
   padding: 25px 25px;
@@ -304,7 +304,7 @@ h3 {
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  width: 200px;
+  width: 230px;
   position: absolute;
   padding: 25px 25px;
   top: 45%;
@@ -325,6 +325,13 @@ h3 {
 .player-scores p span {
   font-size: 2rem;
   font-family: 'Lobster', cursive;
+  color: rgb(255, 255, 255);
+}
+
+#firstPlayer,
+#secondPlayer{
+  font-size: 2.3rem;
+  font-family: 'Lobster', cursive;
   text-shadow: 3px 0 #d2b5ee;
   color: rgb(255, 255, 255);
 }
@@ -336,3 +343,26 @@ h3 {
   top: 80%;
 }
 
+/* ====== DICE GAME PAGE JAVASCRIPT ====== */
+/* Dice Animation */
+.roll {
+  animation: roll 0.3s infinite ease-in-out; /* Increased duration and added easing for smoother animation */
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg) scale(1); /* Start with no rotation and normal scale */
+  }
+  25% {
+    transform: rotate(-90deg) scale(1.2); /* Rotate clockwise and slightly scale up */
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.1); /* Rotate clockwise further and scale slightly down */
+  }
+  75% {
+    transform: rotate(-270deg) scale(1.2); /* Rotate clockwise further and slightly scale up */
+  }
+  100% {
+    transform: rotate(-360deg) scale(1); /* Rotate clockwise back to initial position and normal scale */
+  }
+}
