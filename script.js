@@ -1,19 +1,37 @@
 // Function to submit player names
 // we are using local storage as we are going to be calling these names later in another file
-function submitPlayer(playerNumber) {
+function playerSubmission(playerNumber) {
     const playerNameInput = document.getElementById(`player${playerNumber}`);
     const playerName = playerNameInput ? playerNameInput.value.trim() : "";
   
+    // Making sure valid name has been entered
+    if (playerName.length <= 1) {
+      alert('Please Enter A Valid Name');
+      return
+    } //Ensuring that the name inputted doesnt only have numbers
+      else if (playerName.length === 0 || /\d/.test(playerName)){
+        alert('Only Alphabetic & Special Characters are allowed');
+      return;
+      }
+
     if (playerNumber === 1) {
       localStorage.setItem("player1Name", playerName);
     } else if (playerNumber === 2) {
       localStorage.setItem("player2Name", playerName);
     }
+
   
     // Check if both names are entered
     const bothNamesEntered =
       localStorage.getItem("player1Name") && localStorage.getItem("player2Name");
     document.getElementById("continue").disabled = !bothNamesEntered;
+
+        // Store the player's name in local storage
+        localStorage.setItem(`player${playerNumber}Name`, playerName);
+
+        // Display the player's name on the UI
+        const playerNameElement = document.getElementById(`name${playerNumber}`);
+        playerNameElement.textContent = playerName;
   }
   
   function continueGame() {
@@ -34,8 +52,9 @@ function submitPlayer(playerNumber) {
     localStorage.removeItem("player1Name");
     localStorage.removeItem("player2Name");
   
+    // OR : When quit button is clicked it should clear/refresh the game
     // Redirect to another HTML page when the quit button is clicked
-    window.location.href = "quit.html";
+    window.location.href = "loader.html";
   }
   
   // Reset stored player names when the page is swiped in a slick manner
@@ -45,18 +64,16 @@ function submitPlayer(playerNumber) {
   });
 
 
-  function quitPage() {
-    window.location.href = "https://youtu.be/dXEVs32KHuo?si=7ygkSLpMHe3CbF3j";
-    // window.close();
+  function endGame() {
+    window.location.href = "loader2.html";
   }
   
   function goBack() {
-    // window.location.href = "https://youtu.be/QtXby3twMmI?si=a7y9XcFHzHfwpcqA";
-    window.location.href = "player.html";
+    window.location.href = "rules.html";
   }
   
-  function beginGame() {
-    window.location.href = "game.html";
+  function startGame() {
+    window.location.href = "dice.html";
   }
 
 

@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style-rules.css">
+    <link rel="stylesheet" href="style.css">
     <title>Dice Game</title>
   </head>
   <body>
     <header>
-        <h1>WELCOME TO</h1>
-        <h2>DICE DYNASTY BY T & G</h2>
+        <h1>How to play?</h1>
+        <!-- <h2>DICE DYNASTY BY T & G</h2> -->
             <!-- Bird Background -->
             <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird" class="bird-1" alt="Flying Bird Animation">
             <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird2" class="bird-2" alt="Flying Bird Animation">
@@ -17,11 +17,10 @@
     <main>
       <!-- Rules container -->
       <div class="rules-container">
-        <h2>How to play?</h2>
-        <p>
+        <h3>
           ☞ The objective of the game is to roll the highest number on the dice.
           <!-- We can still edit the rules depending on how we plan our dice game -->
-        </p>
+        </h3>
         <ul id="rules">
           <li>This game consists of 3 rounds.</li>
           <li>The game is played between two players.</li>
@@ -37,13 +36,13 @@
         </ul>
       </div>
       <!-- The start button should take the players to the main game page. End-game button should clear/refresh the game? -->
-      <div class="button-container">
-        <button id="begin" onclick="startgame()">Start</button>
-        <button id="back" onclick="goback()">Back</button>
-        <button id="quit" onclick="endpage()">End</button>
+      <div class="rules-button-container">
+        <button class="btn3" id="begin" onclick="startGame()">Start</button>
+        <button class="btn3" id="back" onclick="goBack()">Back</button>
+        <button class="btn3" id="quit" onclick="endGame()">End</button>
       </div>
     </main>
-      <Footer>"Dare to Roll, Dare to Win - The Dice Awaits Your DESTINY! By Grace and Thato"</Footer>
-    <script src="script.js"></script>
+      <footer style="margin-top: 11.5%;">"Dare to Roll, Dare to Win - The Dice Awaits Your DESTINY! By Grace and Thato"</footer>
+    <script src="rules.js"></script>
   </body>
 </html>
