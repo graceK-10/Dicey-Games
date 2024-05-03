@@ -336,3 +336,26 @@ h3 {
   top: 80%;
 }
 
+/* ====== DICE GAME PAGE JAVASCRIPT ====== */
+/* Dice Animation */
+.roll {
+  animation: roll 0.3s infinite ease-in-out; /* Increased duration and added easing for smoother animation */
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0deg) scale(1); /* Start with no rotation and normal scale */
+  }
+  25% {
+    transform: rotate(-90deg) scale(1.2); /* Rotate clockwise and slightly scale up */
+  }
+  50% {
+    transform: rotate(-180deg) scale(1.1); /* Rotate clockwise further and scale slightly down */
+  }
+  75% {
+    transform: rotate(-270deg) scale(1.2); /* Rotate clockwise further and slightly scale up */
+  }
+  100% {
+    transform: rotate(-360deg) scale(1); /* Rotate clockwise back to initial position and normal scale */
+  }
+}
