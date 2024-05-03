@@ -91,4 +91,4 @@ const player1 = {
   name: localStorage.getItem("player1Name") || "Player One",
   score: 0,
   number: 1,
-}; 
+};

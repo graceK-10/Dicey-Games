@@ -108,7 +108,7 @@ input::placeholder{
 
 #players label[for="player1"], label[for="player2"],
 #player1, #player2 {
-    color: rgb(255, 255, 255); 
+    color: rgb(95, 90, 90); 
     font-family: 'Lobster', cursive;
     margin-bottom: 10px;
 
@@ -271,7 +271,7 @@ h3 {
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  width: 330px;
+  width: 360px;
   height: 350px;
   position: absolute;
   padding: 25px 25px;
@@ -304,7 +304,7 @@ h3 {
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  width: 200px;
+  width: 230px;
   position: absolute;
   padding: 25px 25px;
   top: 45%;
@@ -324,6 +324,13 @@ h3 {
 
 .player-scores p span {
   font-size: 2rem;
+  font-family: 'Lobster', cursive;
+  color: rgb(255, 255, 255);
+}
+
+#player1,
+#player2{
+  font-size: 3rem;
   font-family: 'Lobster', cursive;
   text-shadow: 3px 0 #d2b5ee;
   color: rgb(255, 255, 255);

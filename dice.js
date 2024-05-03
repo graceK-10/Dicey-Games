@@ -11,6 +11,18 @@ let dice = document.querySelectorAll("img");
 let round = 1; // Round counter
 
 // Initializing player objects with default values and retrieving from local storage
+// const player1 = {
+//     name: localStorage.getItem("player1Name") || "Player One",
+//     score: 0,
+//     number: 1,
+//   };
+  
+//   const player2 = {
+//     name: localStorage.getItem("player2Name") || "Player Two",
+//     score: 0,
+//     number: 2,
+//   };
+
 const player1 = {
     name: localStorage.getItem("player1Name") || "Player One",
     score: 0,
@@ -22,6 +34,17 @@ const player1 = {
     score: 0,
     number: 2,
   };
+  
+  // Function to update player names on the HTML page
+  function updatePlayerNames() {
+    document.getElementById("name1").innerText = player1.name;
+    document.getElementById("name2").innerText = player2.name;
+    document.getElementById("player1").innerText = player1.name;
+    document.getElementById("player2").innerText = player2.name;
+  }
+  
+  // Initial update of player names
+  updatePlayerNames();
 
 function rollDice() {
     // Checking for 3 rounds
@@ -61,6 +84,7 @@ try {
     }
 
     round++;
+
 
   }, 1000);
 } 
