@@ -11,18 +11,6 @@ let dice = document.querySelectorAll("img");
 let round = 1; // Round counter
 
 // Initializing player objects with default values and retrieving from local storage
-// const player1 = {
-//     name: localStorage.getItem("player1Name") || "Player One",
-//     score: 0,
-//     number: 1,
-//   };
-  
-//   const player2 = {
-//     name: localStorage.getItem("player2Name") || "Player Two",
-//     score: 0,
-//     number: 2,
-//   };
-
 const player1 = {
     name: localStorage.getItem("player1Name") || "Player One",
     score: 0,
@@ -39,8 +27,8 @@ const player1 = {
   function updatePlayerNames() {
     document.getElementById("name1").innerText = player1.name;
     document.getElementById("name2").innerText = player2.name;
-    document.getElementById("player1").innerText = player1.name;
-    document.getElementById("player2").innerText = player2.name;
+    document.getElementById("firstPlayer").innerText = player1.name;
+    document.getElementById("secondPlayer").innerText = player2.name;
   }
   
   // Initial update of player names
@@ -57,7 +45,7 @@ function rollDice() {
         die.classList.add("roll");
     });
 
-try { 
+
     // Setting a timeout sos that after  the dice rolling will stop and display the value
     setTimeout(function() {
         dice.forEach(function(die) {
@@ -73,6 +61,9 @@ try {
      const dice1 = document.querySelector("#dice-1").setAttribute("src", images[dice1value]);
      const dice2 = document.querySelector("#dice-2").setAttribute("src", images[dice2value]);
 
+     // Update scores in the HTML
+    document.getElementById("score1").textContent = dice1value + 1;
+    document.getElementById("score2").textContent = dice2value + 1;
 
     // Comparing the dice values that will determine the winner
     if (dice1value === dice2value) {
@@ -89,11 +80,6 @@ try {
   }, 1000);
 } 
 
-catch(error) {
-// Displays error message 
-  console.log(error.message);
-  }
-}
 
 function determineWinner() {
     // Determine the winner based on the total scores
@@ -104,10 +90,10 @@ function determineWinner() {
     if (score1 === score2) {
         resultText = "It's a Tie!";
     } else if (score1 > score2) {
-        resultText = player1Name + " Won! ";
+        resultText = name1 + " Won! ";
 
     } else {
-        resultText = player2Name + " Won! ";
+        resultText = name2 + " Won! ";
     }
 
     // Updating the result text
@@ -124,6 +110,8 @@ function updatePlayerScore(player, score) {
     player.score += score;
     document.getElementById(`score${player.number}`).innerText = player.score;
 }
+
+rollDice();
   
 function goBack() {
     window.location.href = "rules.html";
@@ -133,4 +121,4 @@ function quitPage() {
     window.location.href= "loader.html";
 }
 
-rollDice();
+

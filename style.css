@@ -328,9 +328,9 @@ h3 {
   color: rgb(255, 255, 255);
 }
 
-#player1,
-#player2{
-  font-size: 3rem;
+#firstPlayer,
+#secondPlayer{
+  font-size: 2.3rem;
   font-family: 'Lobster', cursive;
   text-shadow: 3px 0 #d2b5ee;
   color: rgb(255, 255, 255);
