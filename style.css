@@ -80,18 +80,21 @@ animation: fly 5s infinite;
 }
 }
 
+/* HOME PAGE CSS */
 .players-container {
-  background-color: rgb(247, 231, 247);
-  height: 195px;
-  width: 250px;
+  background: url(images/container-1.jpeg);
+  background-size: cover;
+  overflow: hidden;
   position: absolute;
-  padding: 30px 10px;
-  top: 50%;
+  width: 280px;
+  position: absolute;
+  padding: 28px 15px;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 2px solid rgb(245, 174, 245);
   border-radius: 10px;
-  margin-top: 20px;
+
+  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 input::placeholder{
@@ -101,6 +104,14 @@ input::placeholder{
   opacity: 0.7; 
   border-color: rgb(245, 174, 245);
   padding: 5px 10px;
+}
+
+#players label[for="player1"], label[for="player2"],
+#player1, #player2 {
+    color: rgb(255, 255, 255); 
+    font-family: 'Lobster', cursive;
+    margin-bottom: 10px;
+
 }
 
 .btn1{
@@ -146,7 +157,7 @@ input::placeholder{
 .btn2{
   padding: 0.8em 1.8em;
   margin-top: 12px;
-  border: 2px solid rgb(138, 43, 226);
+  border: 2px solid #8a2be2;
   border-radius: 1em;
   background: rgb(245, 174, 245);
   transform-style: preserve-3d;
@@ -155,27 +166,139 @@ input::placeholder{
   box-shadow: 0 4px 6px rgba(153, 79, 153, 0.1);
 }
 
-  
-  .dice {
-    text-align: center;
-    display: inline-block;
-  }
-  
+.dice {
+  text-align: center;
+  display: inline-block;
+}
 
-  p {
-    font-size: 2rem;
-    color: whitesmoke;
-    font-family: 'Indie Flower', cursive;
-  }
-  
-  img {
-    width: 80%;
-  }
+
+p {
+  font-size: 2rem;
+  color: whitesmoke;
+  font-family: 'Indie Flower', cursive;
+}
+
+img {
+  width: 80%;
+}
   
 footer {
-  margin-top: 6%;
   color: rgb(255, 255, 255);
   text-align: center;
   font-family: 'Indie Flower', cursive;
+  position: relative;
 }
   
+/* RULES PAGE CSS */
+.rules-container{
+  background: url(images/container-1.jpeg);
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  /* background-color: rgb(247, 231, 247); */
+  width: 280px;
+  position: absolute;
+  padding: 1rem 3rem;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+h3 {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-family: 'Lobster', cursive;
+  text-shadow: 3px 0 #8a2be2;
+  color: rgb(255, 255, 255);
+}
+
+#rules{
+  font-size: 1rem;
+  margin-bottom: 15px;
+  font-family: 'Lobster', cursive;
+  color: rgb(255, 255, 255);
+}
+
+.rules-button-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80%;
+}
+
+.btn3{
+  padding: 0.5em 1.3em;
+  margin-top: 20px;
+  border: 2px solid hsl(271, 76%, 53%);
+  border-radius: 1em;
+  background: rgb(245, 174, 245);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  margin-bottom: 20px;
+}
+
+.btn3::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(245, 146, 245);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em rgb(138, 43, 226);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.btn3:hover{
+  background: rgb(245, 146, 245);
+  transform: translate(0, 0.375em);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ====== DICE GAME PAGE CSS ====== */
+.player-scores{
+  background: url(images/container-1.jpeg);
+  background-size: cover;
+  overflow: hidden;
+  position: absolute;
+  width: 270px;
+  position: absolute;
+  padding: 25px 25px;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  margin-top: 20px;
+  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
+}
+
+.player-scores p {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-family: 'Lobster', cursive;
+  color: rgb(255, 255, 255);
+}
+
+.player-scores p span {
+  font-size: 2rem;
+  font-family: 'Lobster', cursive;
+  text-shadow: 3px 0 #d2b5ee;
+  color: rgb(255, 255, 255);
+}
+
+.dice-button-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 80%;
+}
+
