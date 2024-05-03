@@ -1,45 +1,43 @@
+let images = [
+    "images/dice1.jpeg",
+    "images/dice2.jpeg",
+    "images/dice3.jpeg",
+    "images/dice4.jpeg",
+    "images/dice5.jpeg",
+    "images/dice6.jpeg",
+];
+
+let dice = document.querySelectorAll("img");
+
 function rollDice() {
+    dice.forEach(function(die) {
+        die.classList.add("roll");
+    });
 
-    // F U N C T I O N   T O   R O L L  T H E   D I C E   
-    let diceNum1 = document.querySelector(".img1");
-    let diceNum2 = document.querySelector(".img2");
+    // Setting a timeout sos that after  the dice rolling will stop and display the value
+    setTimeout(function() {
+        dice.forEach(function(die) {
+            die.classList.remove("roll");
+    });
 
-  //   r o l l i n g   d i c e s   
-    diceNum1.setAttribute("src", "images/dice-3.jpeg")
-    diceNum2.setAttribute("src", "images/dice-4.jpeg")
+    // Declaring 2 variables for dice1 and dice2
+    let dice1value = Math.floor(Math.random() * 6);
+    let dice2value = Math.floor(Math.random() * 6);
+    console.log(dice1value,dice2value);
 
+    // Displaying the correct image based on the dice1 and 2 values
+    document.querySelector("#dice-1").setAttribute("src", images[dice1value]);
+    document.querySelector("#dice-2").setAttribute("src", images[dice2value]);
 
-    let result = document.querySelector('h2')
-    result.innerHTML = ""
-
-//   //  Try catch block to handle errors 
-//     try {
-//     setTimeout(() => {
-//         let randomNumber1 = Math.floor(Math.random() * 6) + 1;
-//         let randomNumber2 = Math.floor(Math.random() * 6) + 1;
-
-//         diceNum1.setAttribute('src', 'images/dice' + randomNumber1 + '.jpeg');
-//         diceNum2.setAttribute('src', 'images/dice' + randomNumber2 + '.jpeg');
-
-//         //determine the winner
-//         if (randomNumber1 === randomNumber2) {
-//             result.innerHTML = "Draw!"
-//         }
-//         else if (randomNumber1 < randomNumber2) {
-//             result.innerHTML = <span class='winner-name'> + player2Name + </span> + "Won! ";
-//         }
-//         else {
-//             result.innerHTML = <span class='winner-name'> + player1Name + </span> + "Won! ";
-//         }
-
-//     }, 2500);
-
-// } catch(error) {
-//   // Displays error message 
-//   console.log(error.message);
-// }
+    // Displaying the total value of the sum of dice1 and 1 values
+    document.querySelector("#total").innerHTML = "Your Roll is " + ( (dice1value + 1) + (dice2value + 1) );
+},
+1000
+);
 }
+roll();
 
+  
 function goBack() {
     window.location.href = "rules.html";
 }
