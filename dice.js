@@ -8,12 +8,33 @@ let images = [
 ];
 
 let dice = document.querySelectorAll("img");
+let round = 1; // Round counter
+
+// Initializing player objects with default values and retrieving from local storage
+const player1 = {
+    name: localStorage.getItem("player1Name") || "Player One",
+    score: 0,
+    number: 1,
+  };
+  
+  const player2 = {
+    name: localStorage.getItem("player2Name") || "Player Two",
+    score: 0,
+    number: 2,
+  };
 
 function rollDice() {
+    // Checking for 3 rounds
+    if (round > 3) {
+        determineWinner();
+        return;
+    }
+
     dice.forEach(function(die) {
         die.classList.add("roll");
     });
 
+try { 
     // Setting a timeout sos that after  the dice rolling will stop and display the value
     setTimeout(function() {
         dice.forEach(function(die) {
@@ -21,22 +42,64 @@ function rollDice() {
     });
 
     // Declaring 2 variables for dice1 and dice2
-    let dice1value = Math.floor(Math.random() * 6);
+    let dice1value = Math.floor(Math.random() * 6); 
     let dice2value = Math.floor(Math.random() * 6);
-    console.log(dice1value,dice2value);
+    // console.log(dice1value, dice2value);
 
     // Displaying the correct image based on the dice1 and 2 values
-    document.querySelector("#dice-1").setAttribute("src", images[dice1value]);
-    document.querySelector("#dice-2").setAttribute("src", images[dice2value]);
+     const dice1 = document.querySelector("#dice-1").setAttribute("src", images[dice1value]);
+     const dice2 = document.querySelector("#dice-2").setAttribute("src", images[dice2value]);
 
-    // Displaying the total value of the sum of dice1 and 1 values
-    document.querySelector("#total").innerHTML = "Your Roll is " + ( (dice1value + 1) + (dice2value + 1) );
-},
-1000
-);
+
+    // Comparing the dice values that will determine the winner
+    if (dice1value === dice2value) {
+        document.querySelector("#result").innerHTML = "Draw!";
+    } else if (dice2value > dice1value) {
+        document.querySelector("#result").innerHTML = player2Name + " Wins!";
+    } else {
+        document.querySelector("#result").innerHTML = player1Name + " Wins!";
+    }
+
+    round++;
+
+  }, 1000);
+} 
+
+catch(error) {
+// Displays error message 
+  console.log(error.message);
+  }
 }
-roll();
 
+function determineWinner() {
+    // Determine the winner based on the total scores
+    let score1 = parseInt(document.querySelector("#score1").textContent);
+    let score2 = parseInt(document.querySelector("#score2").textContent);
+    let resultText = "";
+
+    if (score1 === score2) {
+        resultText = "It's a Tie!";
+    } else if (score1 > score2) {
+        resultText = player1Name + " Won! ";
+
+    } else {
+        resultText = player2Name + " Won! ";
+    }
+
+    // Updating the result text
+    document.querySelector("h2").textContent = resultText;
+}
+
+function getCurrentPlayer(){
+    return (round % 2 === 0) ? "Player 2" : "Player 1";
+}
+
+function updatePlayerScore(player, score) {
+
+    // Update the score of the specified player in the HTML
+    player.score += score;
+    document.getElementById(`score${player.number}`).innerText = player.score;
+}
   
 function goBack() {
     window.location.href = "rules.html";
@@ -45,3 +108,5 @@ function goBack() {
 function quitPage() {
     window.location.href= "loader.html";
 }
+
+rollDice();
