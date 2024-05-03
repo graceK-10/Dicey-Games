@@ -34,6 +34,7 @@ function submitPlayer(playerNumber) {
     localStorage.removeItem("player1Name");
     localStorage.removeItem("player2Name");
   
+    // OR : When quit button is clicked it should clear/refresh the game
     // Redirect to another HTML page when the quit button is clicked
     window.location.href = "quit.html";
   }
@@ -45,18 +46,17 @@ function submitPlayer(playerNumber) {
   });
 
 
-  function quitPage() {
-    window.location.href = "https://youtu.be/dXEVs32KHuo?si=7ygkSLpMHe3CbF3j";
-    // window.close();
+  function endGame() {
+    window.location.reload();
   }
   
   function goBack() {
     // window.location.href = "https://youtu.be/QtXby3twMmI?si=a7y9XcFHzHfwpcqA";
-    window.location.href = "player.html";
+    window.location.href = "rules.html";
   }
   
-  function beginGame() {
-    window.location.href = "game.html";
+  function startGame() {
+    window.location.href = "dice.html";
   }
 
 
