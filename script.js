@@ -1,19 +1,37 @@
 // Function to submit player names
 // we are using local storage as we are going to be calling these names later in another file
-function submitPlayer(playerNumber) {
+function playerSubmission(playerNumber) {
     const playerNameInput = document.getElementById(`player${playerNumber}`);
     const playerName = playerNameInput ? playerNameInput.value.trim() : "";
   
+    // Making sure valid name has been entered
+    if (playerName.length <= 1) {
+      alert('Please Enter A Valid Name');
+      return
+    } //Ensuring that the name inputted doesnt only have numbers
+      else if (playerName.length === 0 || /\d/.test(playerName)){
+        alert('Only Alphabetic & Special Characters are allowed');
+      return;
+      }
+
     if (playerNumber === 1) {
       localStorage.setItem("player1Name", playerName);
     } else if (playerNumber === 2) {
       localStorage.setItem("player2Name", playerName);
     }
+
   
     // Check if both names are entered
     const bothNamesEntered =
       localStorage.getItem("player1Name") && localStorage.getItem("player2Name");
     document.getElementById("continue").disabled = !bothNamesEntered;
+
+        // Store the player's name in local storage
+        localStorage.setItem(`player${playerNumber}Name`, playerName);
+
+        // Display the player's name on the UI
+        const playerNameElement = document.getElementById(`name${playerNumber}`);
+        playerNameElement.textContent = playerName;
   }
   
   function continueGame() {
@@ -47,7 +65,7 @@ function submitPlayer(playerNumber) {
 
 
   function endGame() {
-    window.location.reload();
+    window.location.href = "loader2.html";
   }
   
   function goBack() {
