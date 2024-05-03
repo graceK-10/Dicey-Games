@@ -36,7 +36,7 @@ function submitPlayer(playerNumber) {
   
     // OR : When quit button is clicked it should clear/refresh the game
     // Redirect to another HTML page when the quit button is clicked
-    window.location.href = "quit.html";
+    window.location.href = "loader.html";
   }
   
   // Reset stored player names when the page is swiped in a slick manner
@@ -51,7 +51,6 @@ function submitPlayer(playerNumber) {
   }
   
   function goBack() {
-    // window.location.href = "https://youtu.be/QtXby3twMmI?si=a7y9XcFHzHfwpcqA";
     window.location.href = "rules.html";
   }
   
