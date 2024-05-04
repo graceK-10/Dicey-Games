@@ -199,8 +199,8 @@ footer {
   background-size: cover;
   overflow: hidden;
   position: absolute;
-  /* background-color: rgb(247, 231, 247); */
-  width: 280px;
+  width: 420px;
+  height: 410px;
   position: absolute;
   padding: 1rem 3rem;
   top: 47%;

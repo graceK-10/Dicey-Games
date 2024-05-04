@@ -43,7 +43,7 @@ function rollDice() {
         // Get the player with the highest wins
         const winner = Object.keys(leaderboard).reduce((a, b) => leaderboard[a] > leaderboard[b] ? a : b);
         const leaderboardMainContainer = document.getElementById('leaderboard-container');
-        leaderboardMainContainer.innerHTML = `<h2>${winner} is the Winner!</h2>`;
+        leaderboardMainContainer.innerHTML = `<h2>Great Job ${winner} <br> You're a Winner!</h2>`;
         return;
     }
 
