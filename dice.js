@@ -1,124 +1,117 @@
-let images = [
+const images = [
     "images/dice1.jpeg",
     "images/dice2.jpeg",
     "images/dice3.jpeg",
     "images/dice4.jpeg",
     "images/dice5.jpeg",
     "images/dice6.jpeg",
-];
+  ];
 
-let dice = document.querySelectorAll("img");
-let round = 1; // Round counter
+// initial player names and leaderboard object
+let player1 = "player1";
+let player2 = "player2";
+let leaderboard = {};
 
-// Initializing player objects with default values and retrieving from local storage
-const player1 = {
-    name: localStorage.getItem("player1Name") || "Player One",
-    score: 0,
-    number: 1,
-  };
-  
-  const player2 = {
-    name: localStorage.getItem("player2Name") || "Player Two",
-    score: 0,
-    number: 2,
-  };
-  
-  // Function to update player names on the HTML page
-  function updatePlayerNames() {
-    document.getElementById("name1").innerText = player1.name;
-    document.getElementById("name2").innerText = player2.name;
-    document.getElementById("firstPlayer").innerText = player1.name;
-    document.getElementById("secondPlayer").innerText = player2.name;
-  }
-  
-  // Initial update of player names
-  updatePlayerNames();
+// Function to update player names on the HTML page
+function updatePlayerNames() {
+    let player1 = document.getElementById("player1").value;
+    let player2 = document.getElementById("player2").value;
+    
+    // Displaying player names on the dice container
+    document.getElementById("player1").textContent = player1;
+    document.getElementById("player2").textContent = player2;
 
-function rollDice() {
-    // Checking for 3 rounds
-    if (round > 3) {
-        determineWinner();
-        return;
+    const leaderboardPlayerNames = document.querySelector('.leaderboard-names')
+    leaderboardPlayerNames.innerHTML = "";
+
+    // Create list items for each player
+    for (let i = 1; i <= 2; i++) {
+        const playerName = (i === 1) ? player1 : player2;
+        leaderboardPlayerNames.innerHTML += `<li><p id="players${i}">${playerName}</p></li>`;
     }
+  }
 
+// Rolling Dice Function
+function rollDice() {
+
+     // Assign all dice images to the dice variable
+    let dice = document.querySelectorAll("img.img");
     dice.forEach(function(die) {
         die.classList.add("roll");
     });
 
+    // Winner results display
+    let result = document.querySelector('h2')
+    result.innerHTML = ""
+    let leaderboardMainContainer = document.getElementById('leaderboard-container');
 
-    // Setting a timeout sos that after  the dice rolling will stop and display the value
+    // Setting a timeout feature to siùumate the dice rolling animation
     setTimeout(function() {
         dice.forEach(function(die) {
             die.classList.remove("roll");
-    });
+        });
 
-    // Declaring 2 variables for dice1 and dice2
-    let dice1value = Math.floor(Math.random() * 6); 
-    let dice2value = Math.floor(Math.random() * 6);
-    // console.log(dice1value, dice2value);
+        // Generating random numbers for each dice
+        let randomNumberOne = Math.floor(Math.random() * 6) + 1;
+        let randomNumberTwo = Math.floor(Math.random() * 6) + 1;
 
+ 
     // Displaying the correct image based on the dice1 and 2 values
-     const dice1 = document.querySelector("#dice-1").setAttribute("src", images[dice1value]);
-     const dice2 = document.querySelector("#dice-2").setAttribute("src", images[dice2value]);
+    document.querySelector("#dice-1").setAttribute("src", images[randomNumberOne - 1]);
+    document.querySelector("#dice-2").setAttribute("src", images[randomNumberTwo - 1]);
 
-     // Update scores in the HTML
-    document.getElementById("score1").textContent = dice1value + 1;
-    document.getElementById("score2").textContent = dice2value + 1;
+        // Determining the winner and displaying the results on the leaderboard
+        if (randomNumberOne === randomNumberTwo) {
+            result.innerHTML = "it's A Draw! 🤝";
+        } else if (randomNumberOne < randomNumberTwo) {
+            result.innerHTML = (player2 + " 😎 Wins!");
+            updateLeaderBoard(player2);
+        } else {
+            result.innerHTML = (player1 + " 🤝 Wins!");
+            updateLeaderBoard(player1);
+        }
 
-    // Comparing the dice values that will determine the winner
-    if (dice1value === dice2value) {
-        document.querySelector("#result").innerHTML = "Draw!";
-    } else if (dice2value > dice1value) {
-        document.querySelector("#result").innerHTML = player2Name + " Wins!";
-    } else {
-        document.querySelector("#result").innerHTML = player1Name + " Wins!";
+        // Displaying the leaderboard on our dice game
+        displayLeaderBoard(leaderboardMainContainer);
+
+        // Initial update of player names
+     updatePlayerNames();
+    }, 2500);
+}
+
+// When user clicks roll button it will call the update player names function
+document.getElementById('roll').addEventListener('click', rollDice);
+
+// Our update leaderboard function
+function updateLeaderBoard(players) {
+    leaderboard[players] = (leaderboard[players] || 0) + 1;
+}
+
+
+// Displaying the leaderboard on our dice game
+function displayLeaderBoard(main) {
+    main.innerHTML = "<ul><h2>Leaderboard</h2></ul>";
+    for (let players in leaderboard) {
+        main.innerHTML += `<li>${players}: ${leaderboard[players]} wins</li>`;
     }
-
-    round++;
-
-
-  }, 1000);
-} 
-
-
-function determineWinner() {
-    // Determine the winner based on the total scores
-    let score1 = parseInt(document.querySelector("#score1").textContent);
-    let score2 = parseInt(document.querySelector("#score2").textContent);
-    let resultText = "";
-
-    if (score1 === score2) {
-        resultText = "It's a Tie!";
-    } else if (score1 > score2) {
-        resultText = name1 + " Won! ";
-
-    } else {
-        resultText = name2 + " Won! ";
-    }
-
-    // Updating the result text
-    document.querySelector("h2").textContent = resultText;
+    main.innerHTML += "</ul>";
 }
 
-function getCurrentPlayer(){
-    return (round % 2 === 0) ? "Player 2" : "Player 1";
-}
 
-function updatePlayerScore(player, score) {
 
-    // Update the score of the specified player in the HTML
-    player.score += score;
-    document.getElementById(`score${player.number}`).innerText = player.score;
-}
+// Waiting for the DOM content to be fully loaded
+// Call playerSubmission function when the page loads to ensure names are updated
+document.addEventListener("DOMContentLoaded", function() {
+    playerSubmission(); //Updates the first players name
+    // playerSubmission(2); //Updates the second players name
+    rollDice(); // Roll the dice when the page loads
 
-rollDice();
-  
+});
+
 function goBack() {
     window.location.href = "rules.html";
-}
-
-function quitPage() {
-    window.location.href= "loader.html";
-}
-
-
+  }
+  
+  function quitPage() {
+    window.location.href = "loader.html";
+  }
