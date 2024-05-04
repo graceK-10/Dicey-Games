@@ -26,101 +26,30 @@
 <!-- Dice game container with the dice ui --> 
 
   <div class="dice-container">
-    <div class="player">
-    <p id="firstPlayer">Player 1</p>
-    <img src="images/dice4.jpeg" alt="Dice 1 Display" class="img1" id="dice-1">
+    <div class="row">
+    <div class="col-6">
+    <p class="name1" id="player1">Player 1</p>
+    <img src="images/dice4.jpeg" alt="Dice 1 Display" class="img" id="dice-1">
   </div>
-    <div class="player">
-    <p id="secondPlayer">Player 2</p>
-    <img src="images/dice5.jpeg" alt="Dice 2 Display" class="img2" id="dice-2">
+    <div class="col-6">
+      <p class="name2" id="player2">Player 2</p>
+    <img src="images/dice6.jpeg" alt="Dice 2 Display" class="img" id="dice-2">
   </div>
+</div>
 </div>
 
 <main>
-    <!-- Player Scores container with both scores being tallied -->
-    <div class="player-scores">
-    <div class="player" id="firstPlayer">
-      <p> <span id="name1"></span></p> Score: <span id="score1"></span>
-        
-    </div>
-    <div class="player" id="secondPlayer">
-      <p><span id="name2"></span></p> Score: <span id="score2"></span>
-        
-    </div>
+   <!-- Players Leaderboard Container-->
+   <div id="leaderboard-container"> 
+    <ul class="leaderboard-names">
+      <h2>Leaderboard</h2>
+    </ul> 
     </div>
 
-      <div class="container">
-        <div class="dice" id="dice1">
-          <div class="dot one hidden"></div>
-          <div class="two hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="three hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="four hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="five hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot center"></div>
-          </div>
-          <div class="six">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-        </div>
-        <div class="dice" id="dice2">
-          <div class="dot one hidden"></div>
-          <div class="two hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="three hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="four hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="five hidden">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot center"></div>
-          </div>
-          <div class="six">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-        </div>
-      </div>
       <div class="dice-button-container">
-        <button class="btn3" id="roll" onclick="rollDice()">Roll Dice</button>
-        <button class="btn3" id="back" onclick="goBack()">Back</button>
-        <button class="btn3" id="quit" onclick="quitPage()">Quit</button>
+        <button type="button" class="btn3" id="roll" onclick="rollDice()">Roll Dice</button>
+        <button type="button" class="btn3" id="back" onclick="goBack()">Back</button>
+        <button type="button" class="btn3" id="quit" onclick="quitPage()">Quit</button>
       </div>
       
 </main>

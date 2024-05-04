@@ -1,9 +1,12 @@
+// Defining the variables to store the players names
+let player1 = "";
+let player2 = "";
+
 // Function to submit player names
-// we are using local storage as we are going to be calling these names later in another file
 function playerSubmission(playerNumber) {
     const playerNameInput = document.getElementById(`player${playerNumber}`);
     const playerName = playerNameInput ? playerNameInput.value.trim() : "";
-  
+
     // Making sure valid name has been entered
     if (playerName.length <= 1) {
       alert('Please Enter A Valid Name');
@@ -14,59 +17,48 @@ function playerSubmission(playerNumber) {
       return;
       }
 
+       // Update player names directly
     if (playerNumber === 1) {
-      localStorage.setItem("player1Name", playerName);
+      player1 = playerName;
     } else if (playerNumber === 2) {
-      localStorage.setItem("player2Name", playerName);
+      player2 = playerName;
     }
 
-  
-    // Check if both names are entered
-    const bothNamesEntered =
-      localStorage.getItem("player1Name") && localStorage.getItem("player2Name");
-    document.getElementById("continue").disabled = !bothNamesEntered;
+    // Update player names in the UI
+    document.querySelector(`#players label[for="player${playerNumber}"]`).textContent = playerName;
+ 
 
-        // Store the player's name in local storage
-        localStorage.setItem(`player${playerNumber}Name`, playerName);
-
-        // Display the player's name on the UI
-        const playerNameElement = document.getElementById(`name${playerNumber}`);
-        playerNameElement.textContent = playerName;
+    // Checking if both players names are entered before enabling the continue button
+    document.getElementById("continue").disabled = !(player1 && player2);
   }
   
+  // Function to check if both player names are entered before continuing the game
   function continueGame() {
-    // Check if both names are entered before proceeding
-    const player1Name = localStorage.getItem("player1Name");
-    const player2Name = localStorage.getItem("player2Name");
-  
-    if (player1Name && player2Name) {
-      console.log("Moving on to the Rules!");
+    // Check if both player names are entered
+    if (player1 && player2) {
+      console.log ("Moving on to the Rules!");
       window.location.href = "rules.html";
     } else {
       alert("Please enter both player names before continuing the game.");
     }
   }
   
-  function endGame() {
-    // Clear stored player names in local storage to stop errors
-    localStorage.removeItem("player1Name");
-    localStorage.removeItem("player2Name");
-  
-    // OR : When quit button is clicked it should clear/refresh the game
-    // Redirect to another HTML page when the quit button is clicked
-    window.location.href = "loader.html";
-  }
-  
-  // Reset stored player names when the page is swiped in a slick manner
+  // Resets the stored players names
   window.addEventListener("pageshow", function (event) {
-    localStorage.removeItem("player1Name");
-    localStorage.removeItem("player2Name");
+    // Clear stored player names directly
+    player1 = "";
+    player2 = "";
   });
 
-
-  function endGame() {
-    window.location.href = "loader2.html";
-  }
+    // Function to end the game and redirect to another the game home page
+    function endGame() {
+      // Reset player names to empty strings
+      player1 = "";
+      player2 = "";
+    
+      // When quit button is clicked it should clear/refresh the game and redirect to game home page
+      window.location.href = "loader.html";
+    }
   
   function goBack() {
     window.location.href = "rules.html";
@@ -75,20 +67,3 @@ function playerSubmission(playerNumber) {
   function startGame() {
     window.location.href = "dice.html";
   }
-
-
- // Author: thato and grace
-
-// Patched logic for a dice game. Do not change the name of the script.
-// This JavaScript file is linked to the dice.html file.
-
-// Selecting dice elements from the HTML document
-const dice1 = document.querySelector("#dice1");
-const dice2 = document.querySelector("#dice2");
-
-// Initializing player objects with default values and retrieving from local storage
-const player1 = {
-  name: localStorage.getItem("player1Name") || "Player One",
-  score: 0,
-  number: 1,
-};
