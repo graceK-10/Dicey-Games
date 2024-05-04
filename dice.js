@@ -14,8 +14,12 @@ let leaderboard = {};
 
 // Function to update player names on the HTML page
 function updatePlayerNames() {
-    document.getElementById("name1").innerText = player1;
-    document.getElementById("name2").innerText = player2;
+    let player1 = document.getElementById("player1").value;
+    let player2 = document.getElementById("player2").value;
+    
+    // Displaying player names on the dice container
+    document.getElementById("player1").textContent = player1;
+    document.getElementById("player2").textContent = player2;
 
     const leaderboardPlayerNames = document.querySelector('.leaderboard-names')
     leaderboardPlayerNames.innerHTML = "";
@@ -26,7 +30,6 @@ function updatePlayerNames() {
         leaderboardPlayerNames.innerHTML += `<li><p id="players${i}">${playerName}</p></li>`;
     }
   }
-
 
 // Rolling Dice Function
 function rollDice() {
@@ -75,6 +78,9 @@ function rollDice() {
      updatePlayerNames();
     }, 2500);
 }
+
+// When user clicks roll button it will call the update player names function
+document.getElementById('roll').addEventListener('click', rollDice);
 
 // Our update leaderboard function
 function updateLeaderBoard(players) {
