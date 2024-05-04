@@ -43,28 +43,29 @@ function displayWinnerPopup(overallWinner) {
     winnerPopup.style.display = 'block';
 }
 
-// Function to close the winner pop-up
-function closeWinnerPopup() {
+  // Function to close the winner button popup
+  function closeWinnerPopup() {
     const winnerPopup = document.getElementById('winner-popup');
     winnerPopup.style.display = 'none';
-}
+  }
 
 // Rolling Dice Function
 function rollDice() {
 
+
     // Check if the maximum rounds limit (5 rounds) has been reached
-    if (roundsPlayed >= 5) {
+    if (roundsPlayed === 5) {
         const overallWinner = Object.keys(leaderboard).reduce((a, b) => leaderboard[a] > leaderboard[b] ? a : b);
-        // Checkinf if there is an overall winner before displaying the popup
+        // Checking if there is an overall winner before displaying the popup
         if (overallWinner) {
             displayWinnerPopup(overallWinner);
         }
         return;
     }
 
-
     // Increment the roundsPlayed counter
     roundsPlayed++;
+
 
      // Assign all dice images to the dice variable
     let dice = document.querySelectorAll("img.img");
