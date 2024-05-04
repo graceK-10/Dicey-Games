@@ -184,9 +184,13 @@ img {
   
 footer {
   color: rgb(255, 255, 255);
-  text-align: center;
   font-family: 'Indie Flower', cursive;
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px; 
+  text-align: center; 
 }
   
 /* RULES PAGE CSS */
@@ -325,6 +329,7 @@ h3 {
   text-shadow: 3px 0 #d2b5ee;
   color: rgb(255, 255, 255);
   text-align: center;
+  padding-bottom: 20px;
 }
 
 #Player1,

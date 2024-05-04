@@ -33,10 +33,22 @@ function updatePlayerNames() {
     }
   }
 
-
+  let roundsPlayed = 0;
 
 // Rolling Dice Function
 function rollDice() {
+
+    // Check if the maximum rounds limit (5 rounds) has been reached
+    if (roundsPlayed >= 5) {
+        // Get the player with the highest wins
+        const winner = Object.keys(leaderboard).reduce((a, b) => leaderboard[a] > leaderboard[b] ? a : b);
+        const leaderboardMainContainer = document.getElementById('leaderboard-container');
+        leaderboardMainContainer.innerHTML = `<h2>${winner} is the Winner!</h2>`;
+        return;
+    }
+
+    // Increment the roundsPlayed counter
+    roundsPlayed++;
 
      // Assign all dice images to the dice variable
     let dice = document.querySelectorAll("img.img");
@@ -91,11 +103,13 @@ function updateLeaderBoard(players) {
 
 // Displaying the leaderboard on our dice game
 function displayLeaderBoard(main) {
+    if (roundsPlayed < 5) { 
     main.innerHTML = "<ul><h2>Leaderboard</h2></ul>";
     for (let players in leaderboard) {
         main.innerHTML += `<li>${players}: ${leaderboard[players]} wins</li>`;
     }
     main.innerHTML += "</ul>";
+  }
 }
 
 
@@ -103,8 +117,8 @@ function displayLeaderBoard(main) {
 // Waiting for the DOM content to be fully loaded
 // Call playerSubmission function when the page loads to ensure names are updated
 document.addEventListener("DOMContentLoaded", function() {
-    playerSubmission(); //Updates the first players name
-    // playerSubmission(2); //Updates the second players name
+    playerSubmission(1); //Updates the first players name
+    playerSubmission(2); //Updates the second players name
     rollDice(); // Roll the dice when the page loads
 
 });
