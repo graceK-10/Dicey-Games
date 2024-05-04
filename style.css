@@ -1,85 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background: url(images/background-4.jpeg);
-  background-size: cover;
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%; 
-  animation: bg-change 5s infinite;
-}
-
-.container {
-  width: 70%;
-  margin: auto;
-  text-align: center;
-}
-
-header h1{
-  text-align: center;
-  font-size: 5rem;
-  margin: 30px;
-  font-family: 'Lobster', cursive;
-  text-shadow: 15px 10px #232931;
-  color: whitesmoke;
-}
-
-header h2{
-  text-align: center;
-  font-size: 30px;
-  margin: 30px;
-  font-family: 'Lobster', cursive;
-  text-shadow: 10px 5px #232931;
-  color: whitesmoke;
-}
-
-.bird-1{
- position: relative;
- width: 20%;
- height: 20%; 
-}
-
-#bird{
-left: 100%;
-animation: fly 5s infinite;
-}
-
-.bird-2{
-  position: relative;
-  padding-bottom: 100px;
-  width: 20%;
-  height: 20%; 
- }
- 
- #bird2{
- left: 100%;
- animation: fly 5s infinite;
- }
-
-@keyframes fly{
-0%{
-  left: 100%;
-  top: 5px;
-}
-25%{
-  top: 100px;
-}
-50%{
-  top: 80px;
-}
-75%{
-  top: 25px;
-}
-100%{
-  left: -120px;
-  top: 102px;
-}
-}
-
 /* HOME PAGE CSS */
 .players-container {
   background: url(images/container-1.jpeg);
@@ -87,13 +5,13 @@ animation: fly 5s infinite;
   overflow: hidden;
   position: absolute;
   width: 280px;
+  height: 210px;
   position: absolute;
   padding: 28px 15px;
   top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 10px;
-
   box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -106,13 +24,6 @@ input::placeholder{
   padding: 5px 10px;
 }
 
-#players label[for="player1"], label[for="player2"],
-#player1, #player2 {
-    color: rgb(95, 90, 90); 
-    font-family: 'Lobster', cursive;
-    margin-bottom: 10px;
-
-}
 
 .btn1{
   padding: 0.5em 1.3em;
@@ -122,7 +33,6 @@ input::placeholder{
   background: rgb(245, 174, 245);
   transform-style: preserve-3d;
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
-  margin-bottom: 20px;
 }
 
 .btn1::before {
@@ -169,204 +79,4 @@ input::placeholder{
 .dice {
   text-align: center;
   display: inline-block;
-}
-
-
-p {
-  font-size: 2rem;
-  color: whitesmoke;
-  font-family: 'Indie Flower', cursive;
-}
-
-img {
-  width: 80%;
-}
-  
-footer {
-  color: rgb(255, 255, 255);
-  font-family: 'Indie Flower', cursive;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px; 
-  text-align: center; 
-}
-  
-/* RULES PAGE CSS */
-.rules-container{
-  background: url(images/container-1.jpeg);
-  background-size: cover;
-  overflow: hidden;
-  position: absolute;
-  width: 420px;
-  height: 410px;
-  position: absolute;
-  padding: 1rem 3rem;
-  top: 47%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
-}
-
-h3 {
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-  font-family: 'Lobster', cursive;
-  text-shadow: 3px 0 #8a2be2;
-  color: rgb(255, 255, 255);
-}
-
-#rules{
-  font-size: 1rem;
-  margin-bottom: 15px;
-  font-family: 'Lobster', cursive;
-  color: rgb(255, 255, 255);
-}
-
-.rules-button-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 80%;
-}
-
-.btn3{
-  padding: 0.5em 1.3em;
-  margin-top: 20px;
-  border: 2px solid hsl(271, 76%, 53%);
-  border-radius: 1em;
-  background: rgb(245, 174, 245);
-  transform-style: preserve-3d;
-  transition: all 175ms cubic-bezier(0, 0, 1, 1);
-  margin-bottom: 20px;
-}
-
-.btn3::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgb(245, 146, 245);
-  border-radius: inherit;
-  box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em rgb(138, 43, 226);
-  transform: translate3d(0, 0.75em, -1em);
-  transition: all 175ms cubic-bezier(0, 0, 1, 1);
-}
-
-.btn3:hover{
-  background: rgb(245, 146, 245);
-  transform: translate(0, 0.375em);
-  color: #fff;
-  font-weight: 600;
-}
-
-/* ====== DICE GAME PAGE CSS ====== */
-.row {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 120px;
-}
-
-.dice-container {
-  background: url(images/background-6.jpeg);
-  background-size: cover;
-  overflow: hidden;
-  position: absolute;
-  width: 360px;
-  height: 400px;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5); 
-}
-
-/* .col-6 {
-  width: 45%;
-} */
-
-.img {
-  width: 5rem;
-  height: auto;
-  margin-top: 40px;
-  margin-left: 25px;
-  border-radius: 10px;
-}
-
-#leaderboard-container{
-  background: url(images/container-1.jpeg);
-  background-size: cover;
-  overflow: hidden;
-  position: absolute;
-  width: 230px;
-  height: 150px;
-  padding: 25px 25px;
-  top: 45%;
-  left: 15%;
-  transform: translate(-50%, -50%);
-  border-radius: 10px;
-  box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
-}
-
- li{
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  font-family: 'Lobster', cursive;
-  color: rgb(255, 255, 255);
- }
-
- #leaderboard-container h2{
-  font-size: 1.8rem;
-  font-family: 'Lobster', cursive;
-  text-shadow: 3px 0 #d2b5ee;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-#Player1,
-#Player2{
-  font-size: 1.8rem;
-  font-family: 'Lobster', cursive;
-  text-shadow: 3px 0 #d2b5ee;
-  color: rgb(255, 255, 255);
-}
-
-.dice-button-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 80%;
-}
-
-/* ====== DICE GAME PAGE JAVASCRIPT ====== */
-/* Dice Animation */
-.roll {
-  animation: roll 0.3s infinite ease-in-out; /* Increased duration and added easing for smoother animation */
-}
-
-@keyframes roll {
-  0% {
-    transform: rotate(0deg) scale(1); /* Start with no rotation and normal scale */
-  }
-  25% {
-    transform: rotate(-90deg) scale(1.2); /* Rotate clockwise and slightly scale up */
-  }
-  50% {
-    transform: rotate(-180deg) scale(1.1); /* Rotate clockwise further and scale slightly down */
-  }
-  75% {
-    transform: rotate(-270deg) scale(1.2); /* Rotate clockwise further and slightly scale up */
-  }
-  100% {
-    transform: rotate(-360deg) scale(1); /* Rotate clockwise back to initial position and normal scale */
-  }
 }

@@ -1,0 +1,124 @@
+/* ====== DICE GAME PAGE CSS ====== */
+.row {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 120px;
+  }
+  
+  .dice-container {
+    background: url(images/background-6.jpeg);
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    width: 360px;
+    height: 400px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5); 
+  }
+  
+  .img {
+    width: 5rem;
+    height: auto;
+    margin-top: 40px;
+    margin-left: 25px;
+    border-radius: 10px;
+  }
+  
+  #leaderboard-container{
+    background: url(images/container-1.jpeg);
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    width: 230px;
+    height: 150px;
+    padding: 25px 25px;
+    top: 45%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+   li{
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive;
+    color: rgb(255, 255, 255);
+   }
+  
+   #leaderboard-container h2{
+    font-size: 1.8rem;
+    font-family: 'Lobster', cursive;
+    text-shadow: 3px 0 #d2b5ee;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  
+  #Player1,
+  #Player2{
+    font-size: 1.8rem;
+    font-family: 'Lobster', cursive;
+    text-shadow: 3px 0 #d2b5ee;
+    color: rgb(255, 255, 255);
+  }
+  
+  .dice-button-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 80%;
+  }
+
+.popup{
+    background: url(images/container-1.jpeg);
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    width: 230px;
+    height: 150px;
+    padding: 25px 25px;
+    top: 45%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 20px 20px 10px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+  }
+  
+.popup h3{
+    font-size: 1.8rem;
+    font-family: 'Lobster', cursive;
+    text-shadow: 3px 0 #d2b5ee;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  
+  
+  /* ====== Dice Game Page JavaScript Animation ====== */
+  .roll {
+    animation: roll 0.3s infinite ease-in-out;
+  }
+  
+  @keyframes roll {
+    0% {
+      transform: rotate(0deg) scale(1); 
+    }
+    25% {
+      transform: rotate(-90deg) scale(1.2); 
+    }
+    50% {
+      transform: rotate(-180deg) scale(1.1); 
+    }
+    75% {
+      transform: rotate(-270deg) scale(1.2);
+    }
+    100% {
+      transform: rotate(-360deg) scale(1); 
+    }
+  }

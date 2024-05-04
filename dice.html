@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dice.css">
+    <link rel="stylesheet" href="global.css">
     <title>Dice Game</title>
   </head>
 
-  <body>  
-<header>
+<body>  
+  <header>
     <h2>DICE DYNASTY BY T & G</h2>
 
         <!-- Bird Background -->
         <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird" class="bird-1" alt="Flying Bird Animation">
         <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird2" class="bird-2" alt="Flying Bird Animation">
-</header>
+  </header>
 
 <!-- Dice game container with the dice ui --> 
   <div class="dice-container">
@@ -38,16 +39,25 @@
     </ul> 
   </div>
 
+<!-- Winner Popup Container -->
+<div id="winner-popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closeWinnerPopup()">&times;</span>
+    <h3>Overall Winner</h3>
+    <p id="overall-winner"></p>
+  </div>
+</div>
+
+
       <div class="dice-button-container">
         <button type="button" class="btn3" id="roll" onclick="rollDice()">Roll Dice</button>
         <button type="button" class="btn3" id="back" onclick="goBack()">Back</button>
         <button type="button" class="btn3" id="quit" onclick="quitPage()">Quit</button>
-      </div>
-      
+      </div>    
 </main>
 
 <footer>"Dare to Roll, Dare to Win - The Dice Awaits Your DESTINY! By Grace and Thato"</footer>
 
-<script src="dice.js"></script>
+    <script src="dice.js"></script>
   </body>
 </html>

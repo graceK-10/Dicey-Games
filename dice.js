@@ -35,17 +35,33 @@ function updatePlayerNames() {
 
   let roundsPlayed = 0;
 
+// Function to display the overall winner in the pop-up container
+function displayWinnerPopup(overallWinner) {
+    const winnerPopup = document.getElementById('winner-popup');
+    const overallWinnerElement = document.getElementById('overall-winner');
+    overallWinnerElement.textContent = overallWinner;
+    winnerPopup.style.display = 'block';
+}
+
+// Function to close the winner pop-up
+function closeWinnerPopup() {
+    const winnerPopup = document.getElementById('winner-popup');
+    winnerPopup.style.display = 'none';
+}
+
 // Rolling Dice Function
 function rollDice() {
 
     // Check if the maximum rounds limit (5 rounds) has been reached
     if (roundsPlayed >= 5) {
-        // Get the player with the highest wins
-        const winner = Object.keys(leaderboard).reduce((a, b) => leaderboard[a] > leaderboard[b] ? a : b);
-        const leaderboardMainContainer = document.getElementById('leaderboard-container');
-        leaderboardMainContainer.innerHTML = `<h2>Great Job ${winner} <br> You're a Winner!</h2>`;
+        const overallWinner = Object.keys(leaderboard).reduce((a, b) => leaderboard[a] > leaderboard[b] ? a : b);
+        // Checkinf if there is an overall winner before displaying the popup
+        if (overallWinner) {
+            displayWinnerPopup(overallWinner);
+        }
         return;
     }
+
 
     // Increment the roundsPlayed counter
     roundsPlayed++;
