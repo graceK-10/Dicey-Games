@@ -327,13 +327,13 @@ h3 {
   text-align: center;
 }
 
-/* #player1,
-#player2{
-  font-size: 2.3rem;
+#Player1,
+#Player2{
+  font-size: 1.8rem;
   font-family: 'Lobster', cursive;
   text-shadow: 3px 0 #d2b5ee;
   color: rgb(255, 255, 255);
-} */
+}
 
 .dice-button-container {
   position: absolute;

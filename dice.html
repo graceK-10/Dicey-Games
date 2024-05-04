@@ -9,7 +9,6 @@
 
   <body>  
 <header>
-<!-- <h1>WELCOME TO</h1> -->
     <h2>DICE DYNASTY BY T & G</h2>
 
         <!-- Bird Background -->
@@ -17,22 +16,15 @@
         <img src="https://i.postimg.cc/rFnyCRjy/pajaro.gif" id="bird2" class="bird-2" alt="Flying Bird Animation">
 </header>
 
-<!-- Dice game container with results and countdown timer -->
-
-  <h4 id="countdown"></h4>
-  <h4><span id="rounds"></span></h4>
-
-
 <!-- Dice game container with the dice ui --> 
-
   <div class="dice-container">
     <div class="row">
     <div class="col-6">
-    <p class="name1" id="player1"></p>
+    <p class="name1" id="Player1">Player 1</p>
     <img src="images/dice4.jpeg" alt="Dice 1 Display" class="img" id="dice-1">
   </div>
     <div class="col-6">
-      <p class="name2" id="player2"></p>
+      <p class="name2" id="Player2">Player 2</p>
     <img src="images/dice6.jpeg" alt="Dice 2 Display" class="img" id="dice-2">
   </div>
 </div>
@@ -40,11 +32,11 @@
 
 <main>
    <!-- Players Leaderboard Container-->
-   <div id="leaderboard-container"> 
+  <div id="leaderboard-container"> 
     <ul class="leaderboard-names">
       <h2>Leaderboard</h2>
     </ul> 
-    </div>
+  </div>
 
       <div class="dice-button-container">
         <button type="button" class="btn3" id="roll" onclick="rollDice()">Roll Dice</button>
