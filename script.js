@@ -57,7 +57,7 @@ function playerSubmission(playerNumber) {
       player2 = "";
     
       // When quit button is clicked it should clear/refresh the game and redirect to game home page
-      window.location.href = "loader.html";
+      window.location.href = "loader2.html";
     }
   
   function goBack() {
