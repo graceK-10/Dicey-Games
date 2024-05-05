@@ -120,7 +120,7 @@ function updateLeaderBoard(players) {
 
 // Displaying the leaderboard on our dice game
 function displayLeaderBoard(main) {
-    if (roundsPlayed < 5) { 
+    if (roundsPlayed < 6) { 
     main.innerHTML = "<ul><h2>Leaderboard</h2></ul>";
     for (let players in leaderboard) {
         main.innerHTML += `<li>${players}: ${leaderboard[players]} wins</li>`;
