@@ -153,3 +153,21 @@ font-family: 'Indie Flower', cursive;
 position: relative;
 margin-top: 7.6%;
 }
+
+/* Default styles */
+/* Add your default styles here */
+
+/* Tablet styles (768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Add tablet-specific styles here */
+}
+
+/* Desktop styles (992px and up) */
+@media only screen and (min-width: 992px) {
+  /* Add desktop-specific styles here */
+}
+
+/* Large desktop styles (1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* Add large desktop-specific styles here */
+}
