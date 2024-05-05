@@ -24,16 +24,18 @@ input::placeholder{
   padding: 5px 10px;
 }
 
-.btn1, .btn2 {
+
+.btn1{
   padding: 0.5em 1.3em;
   margin-top: 20px;
+  border: 2px solid rgb(138, 43, 226);
   border-radius: 1em;
   background: rgb(245, 174, 245);
   transform-style: preserve-3d;
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.btn1::before, .btn2::before {
+.btn1::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -49,7 +51,7 @@ input::placeholder{
   transition: all 175ms cubic-bezier(0, 0, 1, 1);
 }
 
-.btn1:hover, .btn2:hover {
+.btn1:hover{
   background: rgb(245, 146, 245);
   transform: translate(0, 0.375em);
   color: #fff;
@@ -62,32 +64,19 @@ input::placeholder{
   transform: translateX(-50%);
 }
 
+.btn2{
+  padding: 0.8em 1.8em;
+  margin-top: 12px;
+  border: 2px solid #8a2be2;
+  border-radius: 1em;
+  background: rgb(245, 174, 245);
+  transform-style: preserve-3d;
+  transition: all 175ms cubic-bezier(0, 0, 1, 1);
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(153, 79, 153, 0.1);
+}
+
 .dice {
   text-align: center;
   display: inline-block;
-}
-
-/* Media Queries */
-@media screen and (min-width: 768px) {
-  .players-container {
-    width: 400px;
-    height: 300px;
-    padding: 40px 20px;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .players-container {
-    width: 600px;
-    height: 450px;
-    padding: 60px 30px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .players-container {
-    width: 800px;
-    height: 600px;
-    padding: 80px 40px;
-  }
 }
