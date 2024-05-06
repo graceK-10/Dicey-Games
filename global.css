@@ -228,7 +228,33 @@ label:after { content: ": " }
     font-weight: 600;
   }
   
+  /* Default styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Styles for smartphones and tablets */
+@media only screen and (min-width: 625px) and (max-width: 769px) {
+  /* Add styles for smartphones and tablets here */
+  header h1{
+    font-size: 3.2rem;
+  }  
+  header h2{
+    font-size: 25px;
+  }
+  footer {
+    font-size: 15px;
+  }
+}
+
+/* Styles for small desktops and larger */
+@media only screen and (min-width: 769px) and (max-width: 920px) {
+  /* Add styles for small desktops and larger here */
+
   
+}
+
 
     
   
