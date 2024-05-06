@@ -234,25 +234,27 @@ body {
   font-size: 16px;
 }
 
-/* Styles for smartphones (portrait and landscape) */
-@media only screen and (max-width: 767px) {
-  /* Add smartphone-specific styles here */
+/* Styles for smartphones and tablets */
+@media only screen and (min-width: 625px) and (max-width: 769px) {
+  /* Add styles for smartphones and tablets here */
+  header h1{
+    font-size: 3.2rem;
+  }  
+  header h2{
+    font-size: 25px;
+  }
+  footer {
+    font-size: 15px;
+  }
 }
 
-/* Styles for tablets (portrait and landscape) */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  /* Add tablet-specific styles here */
+/* Styles for small desktops and larger */
+@media only screen and (min-width: 769px) and (max-width: 920px) {
+  /* Add styles for small desktops and larger here */
+
+  
 }
 
-/* Styles for small desktops and laptops */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  /* Add small desktop-specific styles here */
-}
-
-/* Styles for medium to large desktops */
-@media only screen and (min-width: 1200px) {
-  /* Add medium to large desktop-specific styles here */
-}
 
     
   

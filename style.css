@@ -59,7 +59,7 @@ input::placeholder{
 }
 
 .button-container {
-  position: absolute;
+  position: fixed;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -80,3 +80,29 @@ input::placeholder{
   text-align: center;
   display: inline-block;
 }
+
+/* Styles for smartphones and tablets */
+@media only screen and (min-width: 625px) {
+  /* Add styles for smartphones and tablets here */
+  .button-container {   
+    margin-top: 25%;
+  }
+}
+
+/* Styles for small desktops and larger */
+@media only screen and (min-width: 991px) {
+  /* Add styles for small desktops and larger here */
+  .button-container {   
+    margin-top: 25%;
+  }  
+}
+
+/* Styles for medium to large desktops */
+@media only screen and (min-width: 1200px) {
+   /* Add medium to large desktop-specific styles here  */
+  .button-container {   
+    margin-top: 5%;
+  } 
+} 
+
+
