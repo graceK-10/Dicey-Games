@@ -89,7 +89,7 @@
     display: none;
   }
   
-.popup h3{
+.popup h2{
     font-size: 1.8rem;
     font-family: 'Lobster', cursive;
     text-shadow: 3px 0 #d2b5ee;
@@ -98,6 +98,10 @@
     padding-bottom: 20px;
     justify-content: center;
   }
+
+.close {
+   color: white;
+}
 
   
   
@@ -123,3 +127,91 @@
       transform: rotate(-360deg) scale(1); 
     }
   }
+
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+  .row {
+    margin-top: 60px;
+  }
+  .dice-container {
+    width: 290px;
+    height: 320px;
+    top: 35%;
+  }
+  .dice-button-container {
+    top: 60%;
+  }
+  #Player1,
+  #Player2{
+    text-shadow: none;
+    font-size: 1.6rem;
+  }
+  .img {
+    width: 4.5rem;
+    margin-left: 10px;
+  }
+  #leaderboard-container{
+    width: 180px;
+    height: 100px;
+    top: 80%;
+    left: 25%;
+  }
+  #leaderboard-container h2{
+    font-size: 1.3rem;
+    text-shadow: none;
+  }
+  .popup{
+    width: 180px;
+    height: 100px;
+    top: 80%;
+    left: 75%;
+  }
+  .popup h2{
+    font-size: 1.3rem;
+    text-shadow: none;
+  }
+} 
+
+
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    .dice-container {
+      width: 330px;
+      height: 370px;
+      top: 45%;
+      left: 50%;
+    }
+    #Player1,
+    #Player2{
+      text-shadow: none;
+    }
+    .img {
+      width: 4.5rem;
+      margin-left: 15px;
+    }
+    #leaderboard-container{
+      width: 180px;
+      height: 100px;
+    }
+    #leaderboard-container h2{
+      font-size: 1.3rem;
+      text-shadow: none;
+    }
+    .popup{
+      width: 180px;
+      height: 100px;
+    }
+    .popup h2{
+      font-size: 1.3rem;
+      text-shadow: none;
+    }
+    .close {
+      color: white;
+  }
+  }
+
+
+
+
+
+

@@ -228,15 +228,22 @@ label:after { content: ": " }
     font-weight: 600;
   }
   
-  /* Default styles */
-body {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
+
+/* ====================== MEDIA QUERIES ====================== */
+
+/* Media queries for responsiveness */
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+  footer {
+    width: 78%;
+    left: 10%;
+  }
 }
 
-/* Styles for smartphones and tablets */
-@media only screen and (min-width: 625px) and (max-width: 769px) {
-  /* Add styles for smartphones and tablets here */
+/* Small screens (phones, 600px and below) */
+@media only screen and (max-width: 869px) {
+  /* CSS rules for small screens go here */
   header h1{
     font-size: 3.2rem;
   }  
@@ -248,12 +255,7 @@ body {
   }
 }
 
-/* Styles for small desktops and larger */
-@media only screen and (min-width: 769px) and (max-width: 920px) {
-  /* Add styles for small desktops and larger here */
 
-  
-}
 
 
     
