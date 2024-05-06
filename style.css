@@ -81,28 +81,43 @@ input::placeholder{
   display: inline-block;
 }
 
-/* Styles for smartphones and tablets */
-@media only screen and (min-width: 625px) {
-  /* Add styles for smartphones and tablets here */
-  .button-container {   
-    margin-top: 25%;
+
+/* Media queries for responsiveness */
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+  .players-container {
+    width: 90%;
+    height: auto;
+    padding: 20px;
+  }
+  .btn1,
+  .btn2 {
+    padding: 0.8em 1.8em;
+  }
+  .button-container {
+    top: 75%;
   }
 }
 
-/* Styles for small desktops and larger */
-@media only screen and (min-width: 991px) {
-  /* Add styles for small desktops and larger here */
-  .button-container {   
-    margin-top: 25%;
-  }  
+/* For medium screens */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .players-container {
+    width: 70%;
+    height: auto;
+    padding: 25px;
+  }
+  .button-container {
+    top: 75%;
+  }
 }
 
-/* Styles for medium to large desktops */
-@media only screen and (min-width: 1200px) {
-   /* Add medium to large desktop-specific styles here  */
-  .button-container {   
-    margin-top: 5%;
-  } 
-} 
-
+/* For large screens */
+@media screen and (min-width: 1025px) {
+  .players-container {
+    width: 50%;
+    height: auto;
+    padding: 30px;
+  }
+}
 

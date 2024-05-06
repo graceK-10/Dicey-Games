@@ -6,10 +6,10 @@ const images = [
     "images/dice5.jpeg",
     "images/dice6.jpeg",
   ];
-  
+
   let player1 = localStorage.getItem("player1") || "Player 1"; // Initialize with local storage or default
   let player2 = localStorage.getItem("player2") || "Player 2"; // Initialize with local storage or default
-  let leaderboard = {};
+  let leaderboard = [];
   
   function updatePlayerNames() {
     player1 = document.getElementById("Player1").textContent;
@@ -21,13 +21,6 @@ const images = [
     document.getElementById("Player1").textContent = player1;
     document.getElementById("Player2").textContent = player2;
   
-    // const leaderboardPlayerNames = document.querySelector('.leaderboard-names');
-    // leaderboardPlayerNames.innerHTML = "";
-  
-    // for (let i = 1; i <= 2; i++) {
-    //     const playerName = (i === 1) ? player1 : player2;
-    //     leaderboardPlayerNames.innerHTML += `<li><p id="players${i}">${playerName}</p></li>`;
-    // }
   }
   
   let roundsPlayed = 0;
@@ -86,7 +79,6 @@ const images = [
         }
   
         displayLeaderBoard(leaderboardMainContainer);
-        // updatePlayerNames();
     }, 2500);
   }
   

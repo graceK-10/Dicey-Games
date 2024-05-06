@@ -39,4 +39,19 @@
     top: 80%;
   }
   
+/* Media queries for responsiveness */
+
+/* For small screens */
+@media screen and (max-width: 600px) {
+  .rules-container{
+    width: 360px;
+    height: 280px;
+  }
+  #rules{
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+    font-family: 'Lobster', cursive;
+    color: rgb(255, 255, 255);
+  }
   
+} 
